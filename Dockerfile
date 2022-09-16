@@ -23,6 +23,7 @@ WORKDIR /opt/nodeexporter/
 COPY ./node_exporter-1.4.0-rc.0.linux-amd64.tar.gz /opt/nodeexporter/
 RUN tar xvfz node_exporter-1.4.0-rc.0.linux-amd64.tar.gz
 RUN mv node_exporter-1.4.0-rc.0.linux-amd64/* /opt/nodeexporter/
+COPY ./install_node_exporter.sh /opt/nodeexporter/
 
 RUN apt update
 RUN apt install -y default-jdk
@@ -33,13 +34,12 @@ ENV CATALINA_HOME /opt/tomcat/
 ENV CATALINA_BASE /opt/tomcat/
 
 ENV PATH $PATH:$CATALINA_HOME/bin:$CATALINA_HOME/lib
-ENV PATH $PATH:/opt/nodeexporter
 
 EXPOSE 8080
 RUN chmod -R 777 /opt/tomcat/bin
 #ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
 CMD ["catalina.sh", "run"]
-CMD ["install_node_exporter.sh", "run"]
+CMD ["/opt/nodeexporter/install_node_exporter.sh", "run"]
 
 
