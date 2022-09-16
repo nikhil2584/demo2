@@ -11,10 +11,11 @@ USER root
 RUN mkdir /opt/tomcat/
 RUN mkdir /opt/nodeexporter/
 #WORKDIR /opt/tomcat/
-ENV WORKPATH /opt/tomcat/
+#ENV WORKPATH /opt/tomcat/
 WORKDIR $WORKPATH
 
 COPY ./apache-tomcat-8.5.82.tar.gz /opt/tomcat/
+RUN cd /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-8.5.82/* /opt/tomcat/
 
