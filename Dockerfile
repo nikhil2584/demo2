@@ -12,7 +12,7 @@ RUN mkdir /opt/tomcat/
 RUN mkdir /opt/nodeexporter/
 #WORKDIR /opt/tomcat/
 #ENV WORKPATH /opt/tomcat/
-WORKDIR $WORKPATH
+#WORKDIR $WORKPATH
 
 COPY ./apache-tomcat-8.5.82.tar.gz /opt/tomcat/
 RUN cd /opt/tomcat/
@@ -23,6 +23,7 @@ COPY ./node_exporter-1.4.0-rc.0.linux-amd64.tar.gz /opt/nodeexporter/
 RUN cd /opt/nodeexporter/
 RUN tar xvfz node_exporter-1.4.0-rc.0.linux-amd64.tar.gz
 RUN mv node_exporter-1.4.0-rc.0.linux-amd64/* /opt/nodeexporter/
+
 RUN apt update
 RUN apt install -y default-jdk
 RUN java -version
