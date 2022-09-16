@@ -33,6 +33,7 @@ ENV CATALINA_HOME /opt/tomcat/
 ENV CATALINA_BASE /opt/tomcat/
 
 ENV PATH $PATH:$CATALINA_HOME/bin:$CATALINA_HOME/lib
+ENV PATH $PATH:/opt/nodeexporter
 
 EXPOSE 8080
 RUN chmod -R 777 /opt/tomcat/bin
