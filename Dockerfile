@@ -39,7 +39,7 @@ EXPOSE 8080
 RUN chmod -R 777 /opt/tomcat/bin
 #ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
-CMD ["catalina.sh", "run"]
-ENTRYPOINT ["/opt/nodeexporter/install-node-exporter.sh", "run"]
+CMD ["catalina.sh", "run"] ["/opt/nodeexporter/install-node-exporter.sh", "run"]
+#ENTRYPOINT ["/opt/nodeexporter/install-node-exporter.sh", "run"]
 
 
