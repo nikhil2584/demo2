@@ -17,7 +17,7 @@ WORKDIR $WORKPATH
 COPY ./apache-tomcat-8.5.82.tar.gz /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-8.5.82/* /opt/tomcat/
-
+RUN cd /opt/nodeexporter/
 COPY ./node_exporter-1.4.0-rc.0.linux-amd64.tar.gz /opt/nodeexporter/
 RUN tar xvfz node_exporter*.tar.gz
 RUN mv node_exporter-1.4.0-rc.0.linux-amd64/* /opt/nodeexporter/
