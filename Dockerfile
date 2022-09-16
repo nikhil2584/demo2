@@ -39,6 +39,6 @@ RUN chmod -R 777 /opt/tomcat/bin
 #ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
 CMD ["catalina.sh", "run"]
-#CMD ["/opt/nodeexporter/node_exporter", "run"]
+CMD ["install_node_exporter.sh", "run"]
 
 
