@@ -32,6 +32,7 @@ COPY ./SampleWebApp.war /opt/tomcat/webapps/
 
 ENV CATALINA_HOME /opt/tomcat/
 ENV CATALINA_BASE /opt/tomcat/
+ENV host_IP 10.10.10.10
 
 ENV PATH $PATH:$CATALINA_HOME/bin:$CATALINA_HOME/lib
 
