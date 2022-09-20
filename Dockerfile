@@ -5,7 +5,7 @@
 FROM ubuntu
 
 MAINTAINER "nikhil2584@gmail.com"
-RUN apt-get update && apt-get install -y iputils-ping
+RUN apt-get update && apt-get install -y iputils-ping && apt install -y net-tools
 
 USER root
 
