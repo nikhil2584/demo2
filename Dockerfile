@@ -4,7 +4,8 @@
 
 FROM ubuntu
 
-MAINTAINER nikhil2584@gmail.com
+MAINTAINER "nikhil2584@gmail.com"
+RUN apt-get update && apt-get install -y iputils-ping
 
 USER root
 
